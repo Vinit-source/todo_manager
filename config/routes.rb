@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   # These are some standard emthods required for every resource. So rails provides resource routing (https://guides.rubyonrails.org/routing.html#resource-routing-the-rails-default)
 
   get "todos", to: "todos#index"
+  get "todos/create", to: "todos#create"
   get "todos/:id", to: "todos#show"
 end

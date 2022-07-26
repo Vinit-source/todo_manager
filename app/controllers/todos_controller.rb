@@ -4,6 +4,11 @@ class TodosController < ApplicationController
   end
 
   def show
-    render plain: "The params for this page are #{params[:id]}"
+    todo = Todo.find(params[:id])
+    render plain: todo.to_pleasant_string
+  end
+
+  def create
+    todo = todo.find()
   end
 end
