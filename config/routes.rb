@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   # These are some standard emthods required for every resource.
   # So rails provides default methods through resource routing (https://guides.rubyonrails.org/routing.html#resource-routing-the-rails-default)
 
-  get "todos", to: "todos#index"
-  post "todos", to: "todos#create"  # Rails convention for create method.
-  get "todos/:id", to: "todos#show"
+  # get "todos", to: "todos#index"
+  # post "todos", to: "todos#create"  # Rails convention for create method.
+  # get "todos/:id", to: "todos#show"
+
+  resources :todos
 end
