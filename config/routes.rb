@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # - list of resources can be seen: index
   # - single resource can be seen: show
   # - create a new resource
-  # These are some standard emthods required for every resource. So rails provides resource routing (https://guides.rubyonrails.org/routing.html#resource-routing-the-rails-default)
+  # These are some standard emthods required for every resource.
+  # So rails provides default methods through resource routing (https://guides.rubyonrails.org/routing.html#resource-routing-the-rails-default)
 
   get "todos", to: "todos#index"
-  get "todos/create", to: "todos#create"
+  post "todos", to: "todos#create"  # Rails convention for create method.
   get "todos/:id", to: "todos#show"
 end
