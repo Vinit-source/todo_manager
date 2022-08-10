@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" , type="text/css" , href="reset.css">
+  </link>
+  <link rel="stylesheet" , type="text/css" , href="my-app.css">
+  </link>
+  <title>Our Todo Management App</title>
+</head>
+
+<!-- Following BEM convention to name class selectors -->
+
+<body>
+  <article>
+    <h1 class="TodoPage-title">My Todo-list</h1>
+    <section class="AddTodo">
+      <input class="AddTodo-input" type="text" placeholder="What's next?">
+      <input class="AddTodo-input" type="date">
+      <input class="AddTodo-button" type="button" value="Add">
+    </section>
+
+    <!-- Due Today -->
+    <section class="TodoSection">
+      <div class="TodoSection-title">
+        <p class="TodoSection-title-text">Due Today</p>
+        <p class="TodoSection-title-remainingCount">0/4</p>
+      </div>
+      <ul>
+        <li class="TodoItem">
+          <div class="TodoItem-container">
+            <input class="TodoItem-checkbox" type="checkbox">
+            <p class="TodoItem-todo">Submit SaaS 201 project</p>
+            <p class="TodoItem-overdueLabel">Overdue</p>
+            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
+          </div>
+        </li>
+        <li class="TodoItem">
+          <div class="TodoItem-container">
+            <input class="TodoItem-checkbox" type="checkbox">
+            <p class="TodoItem-todo">Call Accountant</p>
+            <p class="TodoItem-overdueLabel"></p>
+            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Due Tomorrow -->
+    <section class="TodoSection">
+      <div class="TodoSection-title">
+        <p class="TodoSection-title-text">Due Tomorrow</p>
+        <p class="TodoSection-title-remainingCount">0/4</p>
+      </div>
+      <ul>
+        <li class="TodoItem">
+          <div class="TodoItem-container">
+            <input class="TodoItem-checkbox" type="checkbox">
+            <p class="TodoItem-todo">Submit SaaS 201 project</p>
+            <p class="TodoItem-overdueLabel"></p>
+            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
+          </div>
+        </li>
+        <li class="TodoItem">
+          <div class="TodoItem-container">
+            <input class="TodoItem-checkbox" type="checkbox">
+            <p class="TodoItem-todo">Call Accountant</p>
+            <p class="TodoItem-overdueLabel"></p>
+            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Remaining -->
+    <section class="TodoSection">
+      <div class="TodoSection-title">
+        <p class="TodoSection-title-text">Remaining</p>
+        <p class="TodoSection-title-remainingCount">0/4</p>
+      </div>
+      <ul>
+        <li class="TodoItem">
+          <div class="TodoItem-container">
+            <input class="TodoItem-checkbox" type="checkbox">
+            <p class="TodoItem-todo">Submit SaaS 201 project</p>
+            <p class="TodoItem-overdueLabel"></p>
+            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
+          </div>
+        </li>
+        <li class="TodoItem">
+          <div class="TodoItem-container">
+            <input class="TodoItem-checkbox" type="checkbox">
+            <p class="TodoItem-todo">Call Accountant</p>
+            <p class="TodoItem-overdueLabel"></p>
+            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+
+  </article>
+</body>
+
+</html>
