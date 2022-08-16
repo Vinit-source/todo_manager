@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   # post "todos", to: "todos#create"  # Rails convention for create method.
   # get "todos/:id", to: "todos#show"
 
+  root "index.html"
+  get "/", to: "index.html"
   resources :todos
   post "/users/login", to: "users#login"
   resources :users
-  get "/", to: "application#main"
 end
