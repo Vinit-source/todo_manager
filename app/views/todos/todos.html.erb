@@ -30,22 +30,16 @@
         <p class="TodoSection-title-remainingCount">0/4</p>
       </div>
       <ul>
-        <li class="TodoItem">
-          <div class="TodoItem-container">
-            <input class="TodoItem-checkbox" type="checkbox">
-            <p class="TodoItem-todo">Submit SaaS 201 project</p>
-            <p class="TodoItem-overdueLabel">Overdue</p>
-            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
-          </div>
-        </li>
-        <li class="TodoItem">
-          <div class="TodoItem-container">
-            <input class="TodoItem-checkbox" type="checkbox">
-            <p class="TodoItem-todo">Call Accountant</p>
-            <p class="TodoItem-overdueLabel"></p>
-            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
-          </div>
-        </li>
+        <% Todo.all.each do |todo| %>
+          <li class="TodoItem">
+            <div class="TodoItem-container">
+              <input class="TodoItem-checkbox" type="checkbox">
+              <p class="TodoItem-todo"><%=todo.todo_text%></p>
+              <p class="TodoItem-overdueLabel">Overdue</p>
+              <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </section>
 
