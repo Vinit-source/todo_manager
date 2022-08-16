@@ -73,3 +73,5 @@ end
 gem "pg", "~> 1.4"
 
 gem "rubocop", require: false
+
+gem 'dotenv-rails', groups: [:development, :test, :production]

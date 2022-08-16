@@ -23,77 +23,26 @@
       <input class="AddTodo-button" type="button" value="Add">
     </section>
 
+    <!-- Overdue -->
+    <%= render partial:"todo-section", locals: {
+      section_title: "Overdue",
+      todos: Todo.overdue,
+      show_due_date: true
+    }%>
+
     <!-- Due Today -->
-    <section class="TodoSection">
-      <div class="TodoSection-title">
-        <p class="TodoSection-title-text">Due Today</p>
-        <p class="TodoSection-title-remainingCount">0/4</p>
-      </div>
-      <ul>
-        <% Todo.all.each do |todo| %>
-          <li class="TodoItem">
-            <div class="TodoItem-container">
-              <input class="TodoItem-checkbox" type="checkbox">
-              <p class="TodoItem-todo"><%=todo.todo_text%></p>
-              <p class="TodoItem-overdueLabel">Overdue</p>
-              <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </section>
+    <%= render partial:"todo-section", locals: {
+      section_title: "Due Today",
+      todos: Todo.due_today,
+      show_due_date: false
+      }%>
 
-    <!-- Due Tomorrow -->
-    <section class="TodoSection">
-      <div class="TodoSection-title">
-        <p class="TodoSection-title-text">Due Tomorrow</p>
-        <p class="TodoSection-title-remainingCount">0/4</p>
-      </div>
-      <ul>
-        <li class="TodoItem">
-          <div class="TodoItem-container">
-            <input class="TodoItem-checkbox" type="checkbox">
-            <p class="TodoItem-todo">Submit SaaS 201 project</p>
-            <p class="TodoItem-overdueLabel"></p>
-            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
-          </div>
-        </li>
-        <li class="TodoItem">
-          <div class="TodoItem-container">
-            <input class="TodoItem-checkbox" type="checkbox">
-            <p class="TodoItem-todo">Call Accountant</p>
-            <p class="TodoItem-overdueLabel"></p>
-            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Remaining -->
-    <section class="TodoSection">
-      <div class="TodoSection-title">
-        <p class="TodoSection-title-text">Remaining</p>
-        <p class="TodoSection-title-remainingCount">0/4</p>
-      </div>
-      <ul>
-        <li class="TodoItem">
-          <div class="TodoItem-container">
-            <input class="TodoItem-checkbox" type="checkbox">
-            <p class="TodoItem-todo">Submit SaaS 201 project</p>
-            <p class="TodoItem-overdueLabel"></p>
-            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
-          </div>
-        </li>
-        <li class="TodoItem">
-          <div class="TodoItem-container">
-            <input class="TodoItem-checkbox" type="checkbox">
-            <p class="TodoItem-todo">Call Accountant</p>
-            <p class="TodoItem-overdueLabel"></p>
-            <a class="TodoItem-delete" href="javascript:void(0)"><img src="delete.png"></a>
-          </div>
-        </li>
-      </ul>
-    </section>
+    <!-- Due Later -->
+    <%= render partial:"todo-section", locals: {
+      section_title: "Due Later",
+      todos: Todo.due_later,
+      show_due_date: true
+    }%>
 
 
   </article>
