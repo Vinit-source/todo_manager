@@ -4,6 +4,8 @@ default: &default
   user: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  template: template0
+  encoding: utf8
   timeout: 5000
 
 development:
