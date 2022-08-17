@@ -49,7 +49,7 @@ body {
 .TodoSection-title {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .TodoSection-title-text {
@@ -85,7 +85,7 @@ body {
 
 .TodoItem-todo {
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .TodoItem-duedate {
