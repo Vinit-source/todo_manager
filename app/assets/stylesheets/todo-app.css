@@ -54,7 +54,6 @@ body {
 
 .TodoSection-title-text {
     font-weight: 600;
-    font-size: 14px;
     margin-right: 8px;
 }
 
@@ -85,12 +84,11 @@ body {
 
 .TodoItem-todo {
     margin-right: 10px;
-    font-size: 20px;
 }
 
 .TodoItem-duedate {
     margin-right: 10px;
-    font-size: 12px;
+    font-size: 10px;
     color: #3a2c4e
 }
 
