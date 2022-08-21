@@ -21,4 +21,8 @@ class Todo < ActiveRecord::Base
     todo.save
     todo
   end
+
+  def to_pleasant_string
+    "#{id}\n#{todo_text}\n#{due_date}\n"
+  end
 end

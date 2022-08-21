@@ -5,10 +5,6 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" , type="text/css" , href="reset.css">
-  </link>
-  <link rel="stylesheet" , type="text/css" , href="my-app.css">
-  </link>
   <title>Our Todo Management App</title>
 </head>
 
@@ -17,11 +13,11 @@
 <body>
   <article>
     <h1 class="TodoPage-title">My Todo-list</h1>
-    <section class="AddTodo">
-      <input class="AddTodo-input" type="text" placeholder="What's next?">
-      <input class="AddTodo-input" type="date">
-      <input class="AddTodo-button" type="button" value="Add">
-    </section>
+    <form class="AddTodo" action="/todos" method="POST">
+      <input class="AddTodo-input" type="text" placeholder="What's next?" name="todo_text">
+      <input class="AddTodo-input" type="date" name="due_date">
+      <input class="AddTodo-button" type="submit" value="Add">
+    </form>
 
     <!-- Overdue -->
     <%= render partial:"todo-section", locals: {
