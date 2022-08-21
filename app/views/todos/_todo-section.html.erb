@@ -7,20 +7,21 @@
     <% todos.each do |todo| %>
         <% if !todo.completed || section_title != "Overdue" %>
             <li class="TodoItem">
-            <div class="TodoItem-container">
-                <%= form_with(url:"/todos/#{todo.id}", method:"put") do %>
-                    <input class="TodoItem-checkbox" name="completed" type="checkbox" onclick="this.form.submit()" <%= todo.completed ? "checked" : "" %> />
-                <% end %>
-                <p class="TodoItem-todo" <%= todo.completed ? 'style=text-decoration:line-through' : "" %>><%= "#{todo.id} - #{todo.todo_text}" %></p>
-                <% if show_due_date %>
-                    <p class="TodoItem-duedate"><%= todo.due_date.strftime("%d %b") %></p>
-                <%end%>
-                <a  href="javascript:void(0)">
-                    <%= form_with(url:"/todos/#{todo.id}", method:"delete") do %>
-                        <input class="TodoItem-delete" type=image src="delete.png">
+                <div class="TodoItem-container">
+                    <!-- form_with instead of form tag and text_field_tag instead of input tag secures website from CSRF attacks-->
+                    <%= form_with(url:"/todos/#{todo.id}", method:"put") do %>
+                        <%= text_field_tag("completed", nil, class:"TodoItem-checkbox", type:"checkbox", onclick: "this.form.submit()", checked:todo.completed ) %>
                     <% end %>
-                </a>
-            </div>
+                    <p class="TodoItem-todo" <%= todo.completed ? 'style=text-decoration:line-through' : "" %>><%= "#{todo.id} - #{todo.todo_text}" %></p>
+                    <% if show_due_date %>
+                        <p class="TodoItem-duedate"><%= todo.due_date.strftime("%d %b") %></p>
+                    <%end%>
+                    <a  href="javascript:void(0)">
+                        <%= form_with(url:"/todos/#{todo.id}", method:"delete") do %>
+                            <%= text_field_tag("trashcan", nil, class:"TodoItem-delete", type:"image", src: "delete.png") %>
+                        <% end %>
+                    </a>
+                </div>
             </li>
         <% end%>
     <% end %>
